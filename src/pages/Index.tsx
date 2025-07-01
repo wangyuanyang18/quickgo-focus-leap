@@ -1,12 +1,12 @@
-
 import { ArrowRight, Smartphone, Zap, Shield, Github, Heart } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Index = () => {
   const platforms = [
-    { name: "Xiaohongshu", color: "bg-red-100 text-red-700" },
-    { name: "Zhihu", color: "bg-blue-100 text-blue-700" },
+    { name: "小红书", color: "bg-red-100 text-red-700" },
+    { name: "抖音", color: "bg-orange-100 text-orange-700" },
+    { name: "公众号", color: "bg-green-100 text-green-700" },
     { name: "YouTube", color: "bg-red-100 text-red-600" },
     { name: "Reddit", color: "bg-orange-100 text-orange-700" }
   ];
@@ -28,6 +28,20 @@ const Index = () => {
       description: "Fully transparent code. Built by students, for everyone who values digital autonomy."
     }
   ];
+
+  const handlePlatformClick = (platformName: string) => {
+    if (platformName === "小红书") {
+      window.open("https://www.xiaohongshu.com/user/profile/95311446097", "_blank");
+    } else if (platformName === "抖音") {
+      window.open("douyin://user/profile/AI2485855953", "_blank");
+    } else if (platformName === "公众号") {
+      window.open("https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=BlueKuro#wechat_redirect", "_blank");
+    } else if (platformName === "Reddit") {
+      window.open("https://www.reddit.com/user/yuanyang0510", "_blank");
+    } else if (platformName === "YouTube") {
+      window.open("https://www.youtube.com/@王远阳", "_blank");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
@@ -52,8 +66,9 @@ const Index = () => {
             {platforms.map((platform, index) => (
               <span 
                 key={platform.name}
-                className={`px-4 py-2 rounded-full text-sm font-medium ${platform.color} transition-transform hover:scale-105`}
+                className={`px-4 py-2 rounded-full text-sm font-medium ${platform.color} transition-transform hover:scale-105 cursor-pointer`}
                 style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => handlePlatformClick(platform.name)}
               >
                 {platform.name}
               </span>
@@ -69,10 +84,15 @@ const Index = () => {
   Download QuickGo
   <ArrowRight className="w-5 h-5 ml-2" />
 </a>
-            <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-slate-50 transition-all duration-200">
-              View on GitHub
-              <Github className="w-5 h-5 ml-2" />
-            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-slate-300 text-slate-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-slate-50 transition-all duration-200"
+              onClick={() => window.open("https://github.com/wangyuanyang18/quickgo-focus-leap", "_blank")}
+          >
+            View on GitHub
+            <Github className="w-5 h-5 ml-2" />
+          </Button>
           </div>
         </div>
       </div>
