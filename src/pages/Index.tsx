@@ -61,10 +61,14 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
-              Download QuickGo
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+<a
+  href="https://github.com/wangyuanyang18/QuickGo/releases/download/v1.0.0/app-debug.apk"
+  download
+  className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 inline-flex items-center"
+>
+  Download QuickGo
+  <ArrowRight className="w-5 h-5 ml-2" />
+</a>
             <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-slate-50 transition-all duration-200">
               View on GitHub
               <Github className="w-5 h-5 ml-2" />
